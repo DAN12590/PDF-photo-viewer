@@ -1,0 +1,39 @@
+GUÍA DE USO - VISOR DE GALERÍA PDF
+
+¡Hola! Aquí tienes los pasos sencillos para ejecutar y utilizar tu nueva aplicación de visualización de PDFs.
+
+REQUISITOS PREVIOS
+------------------
+Asegúrate de tener instalado "Node.js" en tu computadora. Si no lo tienes, puedes descargarlo gratis desde: https://nodejs.org/
+
+PASO 1: INSTALACIÓN
+-------------------
+1. Abre una terminal (Símbolo del sistema o PowerShell).
+2. Navega a la carpeta del proyecto:
+   cd c:\Users\Reyde\Desktop\antigravity\pdf-gallery-viewer
+3. Instala las dependencias necesarias ejecutando este comando:
+   npm install
+
+PASO 2: EJECUTAR LA APLICACIÓN
+------------------------------
+1. Una vez instaladas las dependencias, inicia la aplicación con:
+   npm run dev
+2. Verás un mensaje que dice algo como "Local: http://localhost:5173/".
+3. Abre tu navegador de internet (Chrome, Edge, Firefox, etc.) y escribe esa dirección.
+
+PASO 3: CÓMO USARLO
+-------------------
+1. Verás una pantalla de bienvenida oscura y moderna.
+2. Haz clic en el botón "Select Files" para elegir archivos sueltos, o "Select Folder" para elegir una carpeta completa.
+3. Busca la carpeta donde tienes tus PDFs.
+4. Si elegiste "Select Files", selecciona los archivos. Si elegiste "Select Folder", selecciona la carpeta y confirma.
+5. ¡Listo! La aplicación mostrará una cuadrícula con la primera página de cada PDF.
+6. Haz clic en cualquier imagen pequeña para ver el documento en grande.
+7. En la vista grande, puedes cambiar de página y hacer zoom.
+
+NOTAS
+-----
+- La aplicación funciona completamente en tu computadora (offline), tus archivos no se suben a internet.
+- Si tienes muchísimos archivos (cientos), puede tardar unos segundos en cargar todas las vistas previas.
+
+¡Disfruta tu visor de documentos!
