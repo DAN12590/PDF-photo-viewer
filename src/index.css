@@ -7,7 +7,6 @@
   --accent-primary: #38bdf8;
   --accent-hover: #0ea5e9;
   --border-color: #334155;
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --radius-md: 0.5rem;
@@ -35,7 +34,7 @@ body {
   flex-direction: column;
 }
 
-/* Utilities */
+/* Utilidades */
 .container {
   max-width: 1400px;
   margin: 0 auto;
@@ -67,8 +66,13 @@ body {
   transform: translateY(-1px);
 }
 
+/* Contorno solo al navegar con el teclado */
+:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
 .header {
-  background-color: var(--bg-secondary);
   border-bottom: 1px solid var(--border-color);
   padding: 1rem 0;
   position: sticky;
@@ -97,7 +101,7 @@ body {
   color: var(--accent-primary);
 }
 
-/* Animations */
+/* Animaciones */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }

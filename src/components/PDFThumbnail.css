@@ -3,7 +3,6 @@
     flex-direction: column;
     gap: 0.75rem;
     cursor: pointer;
-    group: hover;
 }
 
 .thumbnail-wrapper {
@@ -13,8 +12,7 @@
     background-color: var(--bg-secondary);
     box-shadow: var(--shadow-md);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    aspect-ratio: 1 / 1.414;
-    /* A4 ratio approx */
+    aspect-ratio: 1 / 1.414; /* proporción de un A4 */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,6 +54,8 @@
     text-align: center;
 }
 
+/* Capa con el icono de ampliar que aparece al pasar el ratón.
+   Es un <button>, así que hay que quitarle el estilo por defecto. */
 .overlay {
     position: absolute;
     inset: 0;
@@ -66,9 +66,12 @@
     opacity: 0;
     transition: opacity 0.2s ease;
     color: white;
+    border: none;
+    cursor: pointer;
 }
 
-.pdf-thumbnail:hover .overlay {
+.pdf-thumbnail:hover .overlay,
+.overlay:focus-visible {
     opacity: 1;
 }
 
@@ -92,7 +95,7 @@
     color: var(--text-secondary);
 }
 
-/* React-PDF canvas override to fit container */
+/* react-pdf pinta un <canvas> de ancho fijo, esto lo ajusta al tamaño de la tarjeta */
 .react-pdf__Page__canvas {
     width: 100% !important;
     height: auto !important;

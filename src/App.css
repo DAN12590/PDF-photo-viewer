@@ -5,10 +5,13 @@
   gap: 2rem;
 }
 
+/* Barra de arriba cuando ya hay PDFs: título a la izquierda, botones de subir a la derecha */
 .toolbar {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
   margin-bottom: 1rem;
 }
 
@@ -16,25 +19,6 @@
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--text-primary);
-}
-
-.toolbar .file-uploader {
-  min-height: auto;
-  padding: 0;
-  border: none;
-  background: none;
-}
-
-.toolbar .uploader-content {
-  flex-direction: row;
-  gap: 1rem;
-}
-
-.toolbar .icon-wrapper,
-.toolbar h2:not(.toolbar > h2),
-/* Hide the inner h2 of uploader */
-.toolbar p {
-  display: none;
 }
 
 .file-count {

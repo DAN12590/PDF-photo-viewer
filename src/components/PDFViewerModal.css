@@ -84,8 +84,7 @@
     display: flex;
     justify-content: center;
     padding: 2rem;
-    background-color: #0f172a;
-    /* Darker background for contrast */
+    background-color: var(--bg-primary); /* más oscuro para que resalte la página */
 }
 
 .modal-footer {

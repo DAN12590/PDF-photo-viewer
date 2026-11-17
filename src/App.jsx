@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Files } from 'lucide-react';
 import FileUploader from './components/FileUploader';
 import PDFGrid from './components/PDFGrid';
@@ -7,19 +7,15 @@ import './App.css';
 
 function App() {
   const [files, setFiles] = useState([]);
+  // PDF abierto en el visor grande. null = visor cerrado
   const [selectedFile, setSelectedFile] = useState(null);
 
-  const handleFilesSelected = (newFiles) => {
-    setFiles(prev => [...prev, ...newFiles]);
-  };
+  // Los nuevos se añaden a los que ya había, no los sustituyen
+  function addFiles(newFiles) {
+    setFiles((current) => [...current, ...newFiles]);
+  }
 
-  const handleThumbnailClick = (file) => {
-    setSelectedFile(file);
-  };
-
-  const closeModal = () => {
-    setSelectedFile(null);
-  };
+  const hasFiles = files.length > 0;
 
   return (
     <div className="app">
@@ -29,30 +25,26 @@ function App() {
             <Files className="logo-icon" size={28} />
             <span>PDF Gallery</span>
           </div>
-          <div className="header-actions">
-            {files.length > 0 && (
-              <span className="file-count">{files.length} files loaded</span>
-            )}
-          </div>
+          {hasFiles && <span className="file-count">{files.length} files loaded</span>}
         </div>
       </header>
 
       <main className="container main-content">
-        {files.length === 0 ? (
-          <FileUploader onFilesSelected={handleFilesSelected} />
-        ) : (
+        {hasFiles ? (
           <>
             <div className="toolbar">
               <h2>Your Collection</h2>
-              <FileUploader onFilesSelected={handleFilesSelected} />
+              <FileUploader onFilesSelected={addFiles} compact />
             </div>
-            <PDFGrid files={files} onThumbnailClick={handleThumbnailClick} />
+            <PDFGrid files={files} onSelect={setSelectedFile} />
           </>
+        ) : (
+          <FileUploader onFilesSelected={addFiles} />
         )}
       </main>
 
       {selectedFile && (
-        <PDFViewerModal file={selectedFile} onClose={closeModal} />
+        <PDFViewerModal file={selectedFile} onClose={() => setSelectedFile(null)} />
       )}
     </div>
   );
