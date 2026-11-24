@@ -4,7 +4,7 @@ Si tienes muchos PDFs con una foto en cada uno, abrirlos uno a uno es un rollo. 
 
 Todo pasa en el navegador: los archivos no se suben a ningún servidor.
 
-Demo: https://danapps.dev/demos/pdf-viewer/
+Web: https://pdf-viewer.danapps.dev/
 
 ## Tecnologías
 
