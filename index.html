@@ -2,13 +2,47 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PDF Gallery</title>
-    <meta name="description" content="Visor de PDFs en cuadrícula: carga varios archivos o una carpeta y ve la primera página de cada uno." />
+    <title>PDF Photo Viewer · See many PDFs at once as a thumbnail gallery</title>
+    <meta name="description" content="Free online PDF gallery: open many PDF files or a whole folder and see the first page of each one as a thumbnail. Everything runs in your browser, nothing is uploaded." />
+    <meta name="author" content="David Hernáez Castejón" />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="canonical" href="https://pdf-viewer.danapps.dev/" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+
+    <!-- Lo que se ve al compartir el enlace -->
+    <meta property="og:title" content="PDF Photo Viewer" />
+    <meta property="og:description" content="Open many PDFs at once and browse the first page of each one in a grid. Runs in your browser, no uploads." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pdf-viewer.danapps.dev/" />
+    <meta property="og:image" content="https://pdf-viewer.danapps.dev/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="PDF Gallery upload screen with buttons to select files or a folder" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "PDF Photo Viewer",
+        "url": "https://pdf-viewer.danapps.dev/",
+        "description": "Open many PDF files or a folder and see the first page of each one as a thumbnail, with a full-screen viewer.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "inLanguage": "en",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+        "author": { "@type": "Person", "name": "David Hernáez Castejón", "url": "https://danapps.dev/" }
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
+    <!-- La app es React, sin JS solo se ve esto -->
+    <noscript>
+      <h1>PDF Photo Viewer</h1>
+      <p>Open many PDF files at once and see the first page of each one as a thumbnail. You need JavaScript enabled to use it.</p>
+    </noscript>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

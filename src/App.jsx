@@ -21,10 +21,10 @@ function App() {
     <div className="app">
       <header className="header">
         <div className="container header-content">
-          <div className="logo">
-            <Files className="logo-icon" size={28} />
+          <h1 className="logo">
+            <Files className="logo-icon" size={28} aria-hidden="true" />
             <span>PDF Gallery</span>
-          </div>
+          </h1>
           {hasFiles && <span className="file-count">{files.length} files loaded</span>}
         </div>
       </header>
