@@ -23,6 +23,8 @@ npm run build    # genera la versión final en dist/
 npm run lint
 ```
 
+Al subir a `master`, GitHub Actions compila la app y la publica en GitHub Pages (`.github/workflows/deploy.yml`).
+
 ## Estructura
 
 ```
